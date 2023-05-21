@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.material.card.MaterialCardView;
 import com.research.livestreamingapp.R;
 import com.research.livestreamingapp.ui.StreamFragment.Model.RecentlyLivesModel;
@@ -48,8 +49,8 @@ public class RecentlyLivesAdapter extends RecyclerView.Adapter<RecentlyLivesAdap
             holder.ProfilePicBorder.setStrokeColor(ContextCompat.getColor(context,R.color.user_border_status_offline));
             holder.ProfilePicBorder.invalidate();
         }
-        Glide.with(context).load(recentlyLivesModels.get(position).getProfile_photo_url()).into(holder.ProfilePhoto);
-        Glide.with(context).load(recentlyLivesModels.get(position).getGame_photo_url()).into(holder.GamePhoto);
+        Glide.with(context).load(recentlyLivesModels.get(position).getProfile_photo_url()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.ProfilePhoto);
+        Glide.with(context).load(recentlyLivesModels.get(position).getGame_photo_url()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.GamePhoto);
     }
 
     @Override

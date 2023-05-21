@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.material.card.MaterialCardView;
 import com.research.livestreamingapp.R;
 import com.research.livestreamingapp.ui.StreamFragment.Model.RecentlyLivesModel;
@@ -53,7 +54,7 @@ public class UserStatusAdapter extends RecyclerView.Adapter<UserStatusAdapter.Us
         }
 
         holder.UserName.setText(recentlyLivesModels.get(position).getUser_name());
-        Glide.with(context).load(recentlyLivesModels.get(position).getProfile_photo_url()).into(holder.UserStatusProfilePic);
+        Glide.with(context).load(recentlyLivesModels.get(position).getProfile_photo_url()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.UserStatusProfilePic);
 
     }
 
