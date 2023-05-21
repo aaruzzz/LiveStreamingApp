@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "174251186737",
+    "project_id": "livestreamingapp-ad5a8",
+    "storage_bucket": "livestreamingapp-ad5a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174251186737:android:5e18195d1303b196321310",
+        "android_client_info": {
+          "package_name": "com.research.livestreamingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174251186737-oe2j5kb6o297mnjuhie9iq9uvcnfsps0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOn04YUPZBr0pvpurP-H8_pOpvTXEpThQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174251186737-oe2j5kb6o297mnjuhie9iq9uvcnfsps0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

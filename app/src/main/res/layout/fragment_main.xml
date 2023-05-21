@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_toolbar_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        android:theme="@style/Theme.LiveStreamingApp.PopupOverlay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:popupTheme="@style/Theme.LiveStreamingApp.PopupOverlay" >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/top_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_pic_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="22dp"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toTopOf="@id/top_guideline">
+
+                <ImageView
+                    android:id="@+id/profile_pic_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:contentDescription="Profile Photo"
+                    android:src="@drawable/profile_pic" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/hello_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:alpha="1"
+                android:fontFamily="sans-serif-black"
+                android:paddingTop="3dp"
+                android:text="Hello!"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/top_toolbar_user_name"
+                app:layout_constraintStart_toEndOf="@id/profile_pic_card"
+                app:layout_constraintTop_toTopOf="@id/profile_pic_card" />
+
+            <TextView
+                android:id="@+id/top_toolbar_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="7dp"
+                android:text="Aarush Timalsina"
+                android:textColor="@color/purple_700"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/profile_pic_card"
+                app:layout_constraintStart_toStartOf="@id/hello_text"
+                app:layout_constraintTop_toBottomOf="@id/hello_text" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/notification_card"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/little_gray"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/profile_pic_card"
+                app:layout_constraintEnd_toEndOf="@id/right_guideline"
+                app:layout_constraintTop_toTopOf="@id/profile_pic_card" />
+
+            <ImageView
+                android:id="@+id/notification_bell_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="16dp"
+                android:src="@drawable/notification_icon"
+                app:layout_constraintBottom_toBottomOf="@id/notification_card"
+                app:layout_constraintEnd_toEndOf="@id/notification_card"
+                app:layout_constraintStart_toStartOf="@id/notification_card"
+                app:layout_constraintTop_toTopOf="@id/notification_card" />
+
+            <TextView
+                android:id="@+id/notification_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:background="@drawable/baseline_circle_24"
+                app:layout_constraintTop_toTopOf="@id/notification_bell_icon"
+                app:layout_constraintEnd_toEndOf="@id/notification_bell_icon"
+                app:layout_constraintBottom_toTopOf="@id/notification_bell_icon"
+                app:layout_constraintStart_toEndOf="@id/notification_bell_icon"/>
+
+
+            <!--    <ImageView-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:src="@drawable/baseline_circle_24"-->
+            <!--        app:layout_constraintTop_toTopOf="@id/notification_bell_icon"-->
+            <!--        app:layout_constraintEnd_toEndOf="@id/notification_bell_icon"-->
+            <!--        app:layout_constraintBottom_toTopOf="@id/notification_bell_icon"-->
+            <!--        app:layout_constraintStart_toEndOf="@id/notification_bell_icon" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_toolbar_fragment"
+        app:layout_constraintBottom_toTopOf="@id/nav_view">
+
+    <FrameLayout
+        android:id="@+id/middle_content_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="fill_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        android:padding="8dp"
+        app:itemIconSize="32dp"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_items" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

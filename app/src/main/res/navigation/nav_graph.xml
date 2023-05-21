@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.research.livestreamingapp.MainFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_MainFragment_to_NotificationFragment"
+            app:destination="@id/NotificationFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/NotificationFragment"
+        android:name="com.research.livestreamingapp.ui.NotificationFragment"
+        android:label="Notification Fragment"
+        tools:layout="@layout/fragment_notification">
+
+        <action
+            android:id="@+id/action_NotificationFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
+
+
+</navigation>
