@@ -37,7 +37,7 @@ public class LiveTournamentAdapter extends RecyclerView.Adapter<LiveTournamentAd
     public void onBindViewHolder(@NonNull LiveTournamentViewHolder holder, int position) {
         holder.TitleView.setText(liveTournamentModels.get(position).getGame_name());
         holder.SubtitleView.setText(liveTournamentModels.get(position).getTournament_time());
-        Glide.with(context).load(liveTournamentModels.get(position).getPhoto_url()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.PhotoView);
+        Glide.with(context).load(liveTournamentModels.get(position).getPhoto_url()).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.PhotoView);
     }
 
     @Override

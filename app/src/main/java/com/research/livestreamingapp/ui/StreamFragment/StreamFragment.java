@@ -53,7 +53,7 @@ public class StreamFragment extends Fragment {
         items1.add(new RecentlyLivesModel("", "", "", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?q=10&h=200", "-", "streaming", "Samuel"));
         items1.add(new RecentlyLivesModel("", "", "", "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80", "", "streaming", "Lily"));
         items1.add(new RecentlyLivesModel("", "", "", "https://static.wikia.nocookie.net/vampirediaries/images/7/74/Katherine-S8.jpg/revision/latest?cb=20170313214107", "-", "online", "Katherine"));
-        items1.add(new RecentlyLivesModel("", "", "", "https://storage.pixteller.com/designs/designs-images/2018-07-27/07/profile-phote-avatar-hair-portrait-person-human-1-5b5b4d2479b24.png", "", "online", "Aarush"));
+        items1.add(new RecentlyLivesModel("", "", "", "https://storage.pixteller.com/designs/designs-images/2018-07-27/07/profile-phote-avatar-hair-portrait-person-human-1-5b5b4d2479b24.png", "", "offline", "Mike"));
 //        items1.add(new RecentlyLivesModel("", "", "", "https://media.istockphoto.com/id/120713767/photo/beautiful-girl-profile-at-the-river.jpg?s=170667a&w=0&k=20&c=LKohLEN39HTnouht1HnOxkTjPHtNuVkEIbRi2NW6Rc8=", "", "offline", "Layla"));
 //        items1.add(new RecentlyLivesModel("", "", "", "https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY=", "", "offline", "Jack"));
 

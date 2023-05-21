@@ -40,7 +40,7 @@ public class PopularGamesAdapter extends RecyclerView.Adapter<PopularGamesAdapte
         holder.PopularGameRatingView.setText(popularGamesModels.get(position).getPopular_game_rating().toString());
         holder.PopularGameRatingBarView.setRating(popularGamesModels.get(position).getPopular_game_rating());
         holder.PopularGameStreamingStatusView.setText(popularGamesModels.get(position).getPopular_game_stream_status());
-        Glide.with(context).load(popularGamesModels.get(position).getPopular_photo_url()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.PopularGamePhotoView);
+        Glide.with(context).load(popularGamesModels.get(position).getPopular_photo_url()).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.PopularGamePhotoView);
     }
 
     @Override

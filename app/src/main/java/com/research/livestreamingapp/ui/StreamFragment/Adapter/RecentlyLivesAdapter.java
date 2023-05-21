@@ -49,8 +49,8 @@ public class RecentlyLivesAdapter extends RecyclerView.Adapter<RecentlyLivesAdap
             holder.ProfilePicBorder.setStrokeColor(ContextCompat.getColor(context,R.color.user_border_status_offline));
             holder.ProfilePicBorder.invalidate();
         }
-        Glide.with(context).load(recentlyLivesModels.get(position).getProfile_photo_url()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.ProfilePhoto);
-        Glide.with(context).load(recentlyLivesModels.get(position).getGame_photo_url()).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.GamePhoto);
+        Glide.with(context).load(recentlyLivesModels.get(position).getProfile_photo_url()).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.ProfilePhoto);
+        Glide.with(context).load(recentlyLivesModels.get(position).getGame_photo_url()).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.GamePhoto);
     }
 
     @Override

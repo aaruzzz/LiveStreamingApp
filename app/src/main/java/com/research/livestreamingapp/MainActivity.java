@@ -64,8 +64,9 @@ public class MainActivity extends AppCompatActivity implements NotificationBroad
 //        notificationIcon.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                getSupportFragmentManager().beginTransaction().replace(R.id.whole, notificationFragment).commit();
+//                updateNotificationBadgeWithZero();
 //            }
+//
 //        });
 
 
@@ -129,6 +130,14 @@ public class MainActivity extends AppCompatActivity implements NotificationBroad
             }
         }
     }
+
+//    private void updateNotificationBadgeWithZero() {
+//        notificationBadge = findViewById(R.id.notification_badge);
+//
+//        notificationFlag = 0;
+//        notificationBadge.setText(String.valueOf(notificationFlag));
+//        notificationBadge.setVisibility(View.GONE);
+//    }
 
 
 }
