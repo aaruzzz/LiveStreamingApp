@@ -1,6 +1,7 @@
 package com.research.livestreamingapp.ui.HomeFragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.research.livestreamingapp.R;
@@ -43,6 +45,7 @@ public class HomeFragment extends Fragment {
     ) {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
+        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
         return binding.getRoot();
 
     }
@@ -52,7 +55,9 @@ public class HomeFragment extends Fragment {
 
         themedToggleButtonGroup = requireView().findViewById(R.id.buttons);
         themedToggleButtonGroup.selectButton(R.id.streamBTN);
-        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
+//        Toast.makeText(getContext(), "THIS IS A TOAST", Toast.LENGTH_SHORT).show();
+//        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
+
 
 
 //        streamButton = getView().findViewById(R.id.streamBTN);
@@ -103,6 +108,7 @@ public class HomeFragment extends Fragment {
                     getParentFragmentManager().beginTransaction().replace(R.id.content, homeOtherFragment).commit();
                     break;
                 default:
+                    getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
                     Toast.makeText(getContext(), "Error! This option is under construction!", Toast.LENGTH_SHORT).show();
                     break;
             }
@@ -110,16 +116,31 @@ public class HomeFragment extends Fragment {
             return null;
         });
 
+
+
 //        List<ThemedButton> selectedButtons = themedToggleButtonGroup.getSelectedButtons();
 //        Toast.makeText(getContext(), selectedButtons.toString(), Toast.LENGTH_SHORT).show();
 
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
+//    }
+
+//    @Override
+//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+//        super.onActivityCreated(savedInstanceState);
+//        if (selectedButton == null || !selectedButton.getText().equals("Stream")) {
+//            ThemedButton streamButton = themedToggleButtonGroup.getThemedButton("Stream");
+//            if (streamButton != null) {
+//                streamButton.setSelected(true);
+//                selectedButton = streamButton;
+//                getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
+//            }
+//        }
+//    }
 
     @Override
     public void onDestroyView() {

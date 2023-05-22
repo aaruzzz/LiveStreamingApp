@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|top"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/bs_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/cyberpunk"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <RatingBar
+        android:id="@+id/bs_rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:max="5"
+        android:rating="3.5"
+        android:theme="@style/customRatingBar"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@id/bs_percentage"
+        app:layout_constraintStart_toStartOf="@id/bs_image"
+        app:layout_constraintTop_toBottomOf="@id/bs_image"/>
+
+    <TextView
+        android:id="@+id/bs_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.5"
+        android:textSize="28sp"
+        app:layout_constraintStart_toEndOf="@id/bs_rating_bar"
+        app:layout_constraintTop_toTopOf="@id/bs_rating_bar"
+        app:layout_constraintBottom_toBottomOf="@id/bs_rating_bar"
+        app:layout_constraintEnd_toEndOf="@id/bs_image"/>
+
+    <TextView
+        android:id="@+id/bs_game_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cyberpunk: Ultimate Edition"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/bs_rating_bar"
+        app:layout_constraintStart_toStartOf="@id/bs_rating_bar"
+        app:layout_constraintEnd_toEndOf="@id/bs_rating_bar"/>
+
+    <TextView
+        android:id="@+id/streaming_now_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Streaming Now"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/bs_game_name"
+        app:layout_constraintStart_toStartOf="@id/bs_game_name"
+        app:layout_constraintEnd_toEndOf="@id/bs_game_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

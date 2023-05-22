@@ -89,7 +89,7 @@ public class MainFragment extends Fragment {
         bottomNavigationView.setOnItemSelectedListener(item -> {
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-                        getParentFragmentManager().beginTransaction().replace(R.id.middle_content_fragment, homeFragment).commit();
+                        getParentFragmentManager().beginTransaction().replace(R.id.middle_content_fragment, new HomeFragment()).commit();
 //                        pager.setCurrentItem(0);
                         return true;
                     case R.id.navigation_dashboard:

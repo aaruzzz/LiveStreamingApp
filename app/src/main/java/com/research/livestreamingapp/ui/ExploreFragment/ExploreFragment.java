@@ -7,13 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.research.livestreamingapp.R;
 import com.research.livestreamingapp.ui.HomeFragment.Categories.HomeStreamFragment;
 
 public class ExploreFragment extends Fragment {
-
-    HomeStreamFragment homeStreamFragment = new HomeStreamFragment();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +29,7 @@ public class ExploreFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+//        HomeStreamFragment homeStreamFragment = new HomeStreamFragment();
 //        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
     }
 }

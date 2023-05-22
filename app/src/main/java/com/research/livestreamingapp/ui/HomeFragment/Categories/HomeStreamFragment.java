@@ -1,15 +1,21 @@
 package com.research.livestreamingapp.ui.HomeFragment.Categories;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.card.MaterialCardView;
 import com.research.livestreamingapp.R;
 import com.research.livestreamingapp.ui.HomeFragment.Adapter.LiveTournamentAdapter;
 import com.research.livestreamingapp.ui.HomeFragment.Adapter.PopularGamesAdapter;
@@ -19,20 +25,34 @@ import com.research.livestreamingapp.ui.HomeFragment.Model.PopularGamesModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.os.Handler;
+import android.widget.Toast;
+
 
 public class HomeStreamFragment extends Fragment {
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+//    @Override
+//    public void onAttach(@NonNull Context context) {
+//        super.onAttach(context);
+//
+//    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_home_stream, container, false);
+
+//        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_pg, null);
+//        View pgCardView = getLayoutInflater().inflate(R.layout.popular_games_card, null);
 
 
         //RecyclerView for Live Tournament
@@ -51,8 +71,7 @@ public class HomeStreamFragment extends Fragment {
 //        items.add(new LiveTournamentModel("Asia Championship 2021", "Weekly tournament", "https://imageio.forbes.com/specials-images/imageserve/61113ca96c9c31992829e63e/Fortnite/960x0.jpg?format=jpg&width=960"));
 //        items.add(new LiveTournamentModel("World eSports & Gaming Summit", "Daily tournament", "https://cdn.vox-cdn.com/thumbor/vMaWAOKdoOl6HTRcL9hZRxJvcco=/0x0:1920x1080/1200x800/filters:focal(782x89:1088x395)/cdn.vox-cdn.com/uploads/chorus_image/image/71768069/11br_evergreens_red_newsheader_1920x1080_4bf3be9721b5.0.jpg"));
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
-        recyclerView.setAdapter(new LiveTournamentAdapter(requireContext().getApplicationContext(), items));
+
 
 
         //RecyclerView for Popular Games
@@ -77,9 +96,59 @@ public class HomeStreamFragment extends Fragment {
 //        items1.add(new PopularGamesModel("Diablo IV", ratingDiablo, "Streaming Now", "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Diablo_IV_cover_art.png/220px-Diablo_IV_cover_art.png"));
 //        items1.add(new PopularGamesModel("FIFA 23 EA Sports", ratingFifa, "Streaming Now", "https://cdn1.epicgames.com/offer/f5deacee017b4b109476933f7dd2edbd/EGS_EASPORTSFIFA23StandardEdition_EACanada_S2_1200x1600-c806355d9cc8b35ebe392f2a7db03075"));
 
-        popularGamesRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
-        popularGamesRecyclerView.setAdapter(new PopularGamesAdapter(requireContext().getApplicationContext(), items1));
+
+
+
+//        MaterialCardView PGCard;
+//        PGCard = pgCardView.findViewById(R.id.popular_games_card);
+//        PGCard.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+//                bottomSheetDialog.setContentView(bottomSheetView);
+//                bottomSheetDialog.show();
+//            }
+//        });
+
+
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
+                        recyclerView.setAdapter(new LiveTournamentAdapter(requireContext().getApplicationContext(), items));
+
+                        popularGamesRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
+                        PopularGamesAdapter PGAdapter = new PopularGamesAdapter(requireContext().getApplicationContext(), items1);
+                        popularGamesRecyclerView.setAdapter(PGAdapter);
+                    }
+                });
+            }
+        }, 200);
+
+
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        ShimmerFrameLayout shimmerFrameLayoutLT, shimmerFrameLayoutPG;
+                        shimmerFrameLayoutLT = rootView.findViewById(R.id.live_tournament_rv_shimmer);
+                        shimmerFrameLayoutPG = rootView.findViewById(R.id.popular_games_rv_shimmer);
+                        shimmerFrameLayoutLT.setVisibility(View.INVISIBLE);
+                        shimmerFrameLayoutPG.setVisibility(View.INVISIBLE);
+                        recyclerView.setVisibility(View.VISIBLE);
+                        popularGamesRecyclerView.setVisibility(View.VISIBLE);
+                    }
+                });
+            }
+        }, 2000);
+
 
         return rootView;
     }
+
 }

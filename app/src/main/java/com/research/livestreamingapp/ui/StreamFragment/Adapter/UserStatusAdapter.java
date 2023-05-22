@@ -54,7 +54,7 @@ public class UserStatusAdapter extends RecyclerView.Adapter<UserStatusAdapter.Us
         }
 
         holder.UserName.setText(recentlyLivesModels.get(position).getUser_name());
-        Glide.with(context).load(recentlyLivesModels.get(position).getProfile_photo_url()).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.UserStatusProfilePic);
+        Glide.with(context).load(recentlyLivesModels.get(position).getProfile_photo_url()).centerInside().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.UserStatusProfilePic);
 
     }
 
