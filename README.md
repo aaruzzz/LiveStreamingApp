@@ -22,7 +22,7 @@
 
 
 
-- Note that there is a bug due to intensive HD images caching. The workaround of optimization and image compression is yet to be done to solve it. Description of bug is that, there is OutOfMemoryError due to which error of not loading images is seen. For temporary solution, below two lines are implemented in Manifest file. It prevents the crash of App and makes image loading possible but it has some other drawbacks such as cardCornerRadius of CardView and MaterialCardView doesn't work due to which cornerly rounded images appear square that affects Stream Fragment.
+- <b> Update: Bug solved! </b> <br> <strike> Note that there is a bug due to intensive HD images caching. The workaround of optimization and image compression is yet to be done to solve it. Description of bug is that, there is OutOfMemoryError due to which error of not loading images is seen. For temporary solution, below two lines are implemented in Manifest file. It prevents the crash of App and makes image loading possible but it has some other drawbacks such as cardCornerRadius of CardView and MaterialCardView doesn't work due to which cornerly rounded images appear square that affects Stream Fragment.
 
       - Insert these two lines in  Manifest file inside Application Tag. (Result- Round circular images such as insta story will load in Stream Fragment but other photos will loose rounded corners; they will be square.)
 
@@ -32,7 +32,18 @@
    ``` 
       - For better UI in Home Fragment, remove above two lines from Manifest file inside Application tag. (Result- Round user pictures won't load in Stream Fragment but other photos will have better suited rounded corners.)
 
+ </strike>
 
+
+ - Recent updates: Shimmer Placeholder for better UI while data is loaded in background, bounce effect on swipe on end of scroll/recycler view.
+
+<p align="center">
+    <img alt="Shimmer placeholder Home Screen" width="250px" src="./img/placeholder_home_stream.png" /> 
+    <img alt="Shimmer placeholder Home Screen" width="250px" src="./img/placeholder_home_stream_1.png" /> 
+    <img alt="Shimmer placeholder Stream Screen" width="250px" src="./img/placeholder_stream.png" /> 
+    <img alt="Shimmer placeholder Stream Screen" width="250px" src="./img/placeholder_stream_1.png" /> 
+
+</p> 
 
 
 
@@ -77,12 +88,12 @@
 
    - In Stream screen, it shows horizontally scrollable users status similar to instagram story. The speciality of this section is that it shows Live status with profile picture if the user is streaming, golden-like circular ring if user is online and gray circular ring around user's profile picture if the user is offline. Below the users status, Recently Lives section is there where Game photo, Streamed game name, location of stream and user profile is shown.
 
-   - Note that there is a bug due to intensive HD images fetches. The workaround of optimization and image compression is yet to be done to solve it. Description of bug is that, there is OutOfMemoryError due to which error of not loading images is seen. Temporarily, 
+   - <b> Update: Bug solved! </b> <br> <strike> Note that there is a bug due to intensive HD images fetches. The workaround of optimization and image compression is yet to be done to solve it. Description of bug is that, there is OutOfMemoryError due to which error of not loading images is seen. Temporarily, 
    ```
    android:hardwareAccelerated="false"
    android:largeHeap="true"
    ``` 
-   - are used in Manifest to make it work but it causes some drawbacks such as the cardCornerRadius of CardView and MaterialCardView doesn't work due to which cornerly rounded images appear square.
+   - are used in Manifest to make it work but it causes some drawbacks such as the cardCornerRadius of CardView and MaterialCardView doesn't work due to which cornerly rounded images appear square. </strike>
 
    - The original image supposed to be shown in stream fragment is:
 
@@ -98,6 +109,16 @@
     <img alt="Stream Fragment" width="250px" src="./img/StreamFragment1.png" /> 
     <img alt="Stream Fragment" width="250px" src="./img/StreamFragment2.png" /> 
     <img alt="Stream Fragment" width="250px" src="./img/StreamFragment3.png" /> 
+</p>    
+
+- Current Stream Fragment:
+
+  
+<p align="center">
+    <img alt="Stream Fragment" width="250px" src="./img/StreamFragmentNew.png" /> 
+    <img alt="Stream Fragment" width="250px" src="./img/StreamFragmentNew1.png" /> 
+    <img alt="Stream Fragment" width="250px" src="./img/StreamFragmentNew2.png" /> 
+
 </p>    
 
 ---
