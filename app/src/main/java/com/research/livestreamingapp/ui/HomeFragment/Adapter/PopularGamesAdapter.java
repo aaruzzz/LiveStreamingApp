@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
@@ -45,7 +46,15 @@ public class PopularGamesAdapter extends RecyclerView.Adapter<PopularGamesAdapte
         holder.PopularGameRatingView.setText(popularGamesModels.get(position).getPopular_game_rating().toString());
         holder.PopularGameRatingBarView.setRating(popularGamesModels.get(position).getPopular_game_rating());
         holder.PopularGameStreamingStatusView.setText(popularGamesModels.get(position).getPopular_game_stream_status());
-        Glide.with(context).load(popularGamesModels.get(position).getPopular_photo_url()).centerInside().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.PopularGamePhotoView);
+        Glide.with(context)
+                .load(popularGamesModels.get(position).getPopular_photo_url())
+                .centerInside()
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .apply(new RequestOptions()
+                        .encodeQuality(50) // Decrease image quality to 50% (adjust as needed)
+                        .override(720, 480) // Decrease image size to 720x480 pixels (adjust as needed)
+                )
+                .into(holder.PopularGamePhotoView);
 
         // Bottom Sheet Trial to display bottom sheet view of the pressed card
 

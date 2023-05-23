@@ -56,12 +56,12 @@ public class StreamFragment extends Fragment {
         RecyclerView userStatusRV = binding.userStatusRv;
         List<RecentlyLivesModel> items1 = new ArrayList<>();
 
-        items1.add(new RecentlyLivesModel("", "", "", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?q=10&h=200", "-", "streaming", "Samuel"));
+        items1.add(new RecentlyLivesModel("", "", "", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?q=10&h=200", "", "streaming", "Samuel"));
         items1.add(new RecentlyLivesModel("", "", "", "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww&w=1000&q=80", "", "streaming", "Lily"));
-        items1.add(new RecentlyLivesModel("", "", "", "https://static.wikia.nocookie.net/vampirediaries/images/7/74/Katherine-S8.jpg/revision/latest?cb=20170313214107", "-", "online", "Katherine"));
-        items1.add(new RecentlyLivesModel("", "", "", "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg", "", "offline", "Mike"));
-//        items1.add(new RecentlyLivesModel("", "", "", "https://media.istockphoto.com/id/120713767/photo/beautiful-girl-profile-at-the-river.jpg?s=170667a&w=0&k=20&c=LKohLEN39HTnouht1HnOxkTjPHtNuVkEIbRi2NW6Rc8=", "", "offline", "Layla"));
-//        items1.add(new RecentlyLivesModel("", "", "", "https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY=", "", "offline", "Jack"));
+        items1.add(new RecentlyLivesModel("", "", "", "https://static.wikia.nocookie.net/vampirediaries/images/7/74/Katherine-S8.jpg/revision/latest?cb=20170313214107", "", "online", "Katherine"));
+        items1.add(new RecentlyLivesModel("", "", "", "https://as1.ftcdn.net/v2/jpg/02/17/64/02/1000_F_217640276_uNPwftAgKhHALaVUgj6SFv5crXWsVAuG.jpg", "", "offline", "Mike"));
+        items1.add(new RecentlyLivesModel("", "", "", "https://media.istockphoto.com/id/120713767/photo/beautiful-girl-profile-at-the-river.jpg?s=170667a&w=0&k=20&c=LKohLEN39HTnouht1HnOxkTjPHtNuVkEIbRi2NW6Rc8=", "", "offline", "Layla"));
+        items1.add(new RecentlyLivesModel("", "", "", "https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY=", "", "offline", "Jack"));
 
 
         //Timer to delay thread by 0.2 seconds to prevent freezing of app

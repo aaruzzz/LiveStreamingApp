@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.research.livestreamingapp.R;
 import com.research.livestreamingapp.ui.HomeFragment.Model.LiveTournamentModel;
 
@@ -41,7 +42,15 @@ public class LiveTournamentAdapter extends RecyclerView.Adapter<LiveTournamentAd
     public void onBindViewHolder(@NonNull LiveTournamentViewHolder holder, int position) {
         holder.TitleView.setText(liveTournamentModels.get(position).getGame_name());
         holder.SubtitleView.setText(liveTournamentModels.get(position).getTournament_time());
-        Glide.with(context).load(liveTournamentModels.get(position).getPhoto_url()).centerInside().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.PhotoView);
+        Glide.with(context)
+                .load(liveTournamentModels.get(position).getPhoto_url())
+                .centerInside()
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .apply(new RequestOptions()
+                        .encodeQuality(50) // Decrease image quality to 75% (adjust as needed)
+                        .override(1080, 720) // Decrease image size to 500x500 pixels (adjust as needed)
+                )
+                .into(holder.PhotoView);
 
         holder.PopupMenu.setOnClickListener(view -> {
             PopupMenu popupMenu = new PopupMenu(context, holder.PopupMenu);
