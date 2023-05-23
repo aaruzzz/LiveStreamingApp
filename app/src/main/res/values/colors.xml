@@ -10,4 +10,5 @@
     <color name="little_gray">#F7F6F9</color>
     <color name="user_border_status_online">#DCC680</color>
     <color name="user_border_status_offline">#EBE8EC</color>
+    <color name="placeholder_color">#B3B3B3</color>
 </resources>

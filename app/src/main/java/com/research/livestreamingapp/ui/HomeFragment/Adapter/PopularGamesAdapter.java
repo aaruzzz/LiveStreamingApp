@@ -47,6 +47,8 @@ public class PopularGamesAdapter extends RecyclerView.Adapter<PopularGamesAdapte
         holder.PopularGameStreamingStatusView.setText(popularGamesModels.get(position).getPopular_game_stream_status());
         Glide.with(context).load(popularGamesModels.get(position).getPopular_photo_url()).centerInside().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.PopularGamePhotoView);
 
+        // Bottom Sheet Trial to display bottom sheet view of the pressed card
+
 //        holder.PopularGamesCard.setOnClickListener(view -> {
 //
 //            final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);

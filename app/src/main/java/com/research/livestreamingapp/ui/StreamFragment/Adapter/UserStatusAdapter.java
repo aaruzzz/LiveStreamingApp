@@ -39,6 +39,7 @@ public class UserStatusAdapter extends RecyclerView.Adapter<UserStatusAdapter.Us
 
     @Override
     public void onBindViewHolder(@NonNull UserStatusAdapter.UserStatusViewHolder holder, int position) {
+        //Check status of user and display the profile picture border and LIVE status accordingly
         if(Objects.equals(recentlyLivesModels.get(position).getUser_status(), "streaming")){
             holder.LiveText.setVisibility(View.VISIBLE);
             holder.UserStatusPicBorder.setStrokeColor(ContextCompat.getColor(context,R.color.user_border_status_online));

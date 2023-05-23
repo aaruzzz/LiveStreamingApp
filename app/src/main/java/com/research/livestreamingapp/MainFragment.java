@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.research.livestreamingapp.ui.ExploreFragment.ExploreFragment;
@@ -19,6 +20,8 @@ import com.research.livestreamingapp.ui.StreamFragment.StreamFragment;
 
 import java.util.ArrayList;
 import java.util.Objects;
+
+import me.everything.android.ui.overscroll.OverScrollDecoratorHelper;
 
 
 public class MainFragment extends Fragment {
@@ -31,6 +34,7 @@ public class MainFragment extends Fragment {
 
 
     ImageView imageView;
+    ScrollView scrollContainerView;
 
     ViewPager2 pager;
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
@@ -52,7 +56,7 @@ public class MainFragment extends Fragment {
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
 
 
-
+        //View Pager trial to switch between bottom navigations
 /*
         pager = rootView.findViewById(R.id.pager);
         fragmentArrayList.add(new HomeFragment());
@@ -111,6 +115,8 @@ public class MainFragment extends Fragment {
         imageView = rootView.findViewById(R.id.notification_bell_icon);
         imageView.setOnClickListener(view -> NavHostFragment.findNavController(MainFragment.this).navigate(R.id.action_MainFragment_to_NotificationFragment));
 
+        scrollContainerView = rootView.findViewById(R.id.scroll_view_container);
+        OverScrollDecoratorHelper.setUpOverScroll(scrollContainerView);
 
         return rootView;
     }

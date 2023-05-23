@@ -29,7 +29,5 @@ public class ExploreFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-//        HomeStreamFragment homeStreamFragment = new HomeStreamFragment();
-//        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
     }
 }

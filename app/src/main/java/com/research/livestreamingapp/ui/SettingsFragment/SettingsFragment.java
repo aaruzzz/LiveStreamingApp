@@ -13,8 +13,6 @@ import com.research.livestreamingapp.ui.HomeFragment.Categories.HomeStreamFragme
 
 public class SettingsFragment extends Fragment {
 
-    HomeStreamFragment homeStreamFragment = new HomeStreamFragment();
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +28,5 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-//        HomeStreamFragment homeStreamFragment = new HomeStreamFragment();
-//        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
     }
 }

@@ -3,6 +3,7 @@ package com.research.livestreamingapp.ui;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,6 @@ import com.research.livestreamingapp.ui.HomeFragment.HomeFragment;
 
 
 public class NotificationFragment extends Fragment {
-    HomeFragment homeFragment = new HomeFragment();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,12 +28,7 @@ public class NotificationFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_notification, container, false);
 
         ImageView backButton = rootView.findViewById(R.id.back_arrow);
-//        backButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(NotificationFragment.this).navigate(R.id.action_NotificationFragment_to_HomeFragment);
-//            }
-//        });
+        backButton.setOnClickListener(view -> NavHostFragment.findNavController(NotificationFragment.this).navigate(R.id.action_NotificationFragment_to_MainFragment));
 
 
         // Inflate the layout for this fragment
@@ -43,7 +38,6 @@ public class NotificationFragment extends Fragment {
 
     public void onDestroyView() {
         super.onDestroyView();
-        getParentFragmentManager().beginTransaction().replace(R.id.middle_content_fragment, homeFragment).commit();
     }
 
 

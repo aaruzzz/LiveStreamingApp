@@ -42,6 +42,7 @@ public class RecentlyLivesAdapter extends RecyclerView.Adapter<RecentlyLivesAdap
         holder.GameName.setText(recentlyLivesModels.get(position).getGame_name());
         holder.Address.setText(recentlyLivesModels.get(position).getAddress());
         holder.Viewers.setText(recentlyLivesModels.get(position).getViewers());
+        //Check status of user and display the profile picture border accordingly
         if(Objects.equals(recentlyLivesModels.get(position).getUser_status(), "online")){
             holder.ProfilePicBorder.setStrokeColor(ContextCompat.getColor(context,R.color.user_border_status_online));
             holder.ProfilePicBorder.invalidate();

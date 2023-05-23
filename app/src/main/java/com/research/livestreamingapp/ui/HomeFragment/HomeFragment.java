@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,15 +20,14 @@ import com.research.livestreamingapp.ui.HomeFragment.Categories.HomeMultiplayerF
 import com.research.livestreamingapp.ui.HomeFragment.Categories.HomeOtherFragment;
 import com.research.livestreamingapp.ui.HomeFragment.Categories.HomeStreamFragment;
 
+import me.everything.android.ui.overscroll.OverScrollDecoratorHelper;
 import nl.bryanderidder.themedtogglebuttongroup.ThemedButton;
 import nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup;
 
 public class HomeFragment extends Fragment {
     ThemedToggleButtonGroup themedToggleButtonGroup;
-//    ThemedButton streamButton;
-//    ThemedButton multiplayerButton;
-//    ThemedButton esportsButton;
-//    ThemedButton otherButton;
+    HorizontalScrollView buttonContainer;
+
 
     HomeStreamFragment homeStreamFragment = new HomeStreamFragment();
     HomeMultiplayerFragment homeMultiplayerFragment = new HomeMultiplayerFragment();
@@ -55,42 +55,9 @@ public class HomeFragment extends Fragment {
 
         themedToggleButtonGroup = requireView().findViewById(R.id.buttons);
         themedToggleButtonGroup.selectButton(R.id.streamBTN);
-//        Toast.makeText(getContext(), "THIS IS A TOAST", Toast.LENGTH_SHORT).show();
-//        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
 
-
-
-//        streamButton = getView().findViewById(R.id.streamBTN);
-//        streamButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
-//            }
-//        });
-
-//        multiplayerButton = getView().findViewById(R.id.multiplayerBTN);
-//        multiplayerButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getParentFragmentManager().beginTransaction().replace(R.id.content, homeMultiplayerFragment).commit();
-//            }
-//        });
-//
-//        esportsButton = getView().findViewById(R.id.esportsBTN);
-//        esportsButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getParentFragmentManager().beginTransaction().replace(R.id.content, homeEsportsFragment).commit();
-//            }
-//        });
-//
-//        otherButton = getView().findViewById(R.id.otherBTN);
-//        otherButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getParentFragmentManager().beginTransaction().replace(R.id.content, homeOtherFragment).commit();
-//            }
-//        });
+        buttonContainer = requireView().findViewById(R.id.button_container);
+        OverScrollDecoratorHelper.setUpOverScroll(buttonContainer);
 
         themedToggleButtonGroup.setOnSelectListener((ThemedButton btn) -> {
             String selectedBTN = btn.getText();
@@ -116,31 +83,11 @@ public class HomeFragment extends Fragment {
             return null;
         });
 
+//        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
 
 
-//        List<ThemedButton> selectedButtons = themedToggleButtonGroup.getSelectedButtons();
-//        Toast.makeText(getContext(), selectedButtons.toString(), Toast.LENGTH_SHORT).show();
 
     }
-
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
-//    }
-
-//    @Override
-//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//        if (selectedButton == null || !selectedButton.getText().equals("Stream")) {
-//            ThemedButton streamButton = themedToggleButtonGroup.getThemedButton("Stream");
-//            if (streamButton != null) {
-//                streamButton.setSelected(true);
-//                selectedButton = streamButton;
-//                getParentFragmentManager().beginTransaction().replace(R.id.content, homeStreamFragment).commit();
-//            }
-//        }
-//    }
 
     @Override
     public void onDestroyView() {

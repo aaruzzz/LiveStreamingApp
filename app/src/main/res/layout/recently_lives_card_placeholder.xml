@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:background="#B3B3B3"
+                android:background="@color/placeholder_color"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +46,7 @@
                 android:drawablePadding="2dp"
                 android:padding="3dp"
                 android:text="XXXX"
-                android:textColor="#B3B3B3"
+                android:textColor="@color/placeholder_color"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +61,7 @@
                 android:drawablePadding="2dp"
                 android:padding="5dp"
                 android:text="xxxx"
-                android:textColor="#B3B3B3"
+                android:textColor="@color/placeholder_color"
                 app:layout_constraintBottom_toBottomOf="@id/live_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/live_text" />
@@ -77,8 +77,8 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="16dp"
         android:text="Mobile Legends"
-        android:textColor="#B3B3B3"
-        android:background="#B3B3B3"
+        android:textColor="@color/placeholder_color"
+        android:background="@color/placeholder_color"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,8 +90,8 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="4dp"
         android:text="Live From Las Vegas"
-        android:textColor="#B3B3B3"
-        android:background="#B3B3B3"
+        android:textColor="@color/placeholder_color"
+        android:background="@color/placeholder_color"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/live_game_name" />
@@ -108,14 +108,14 @@
             app:layout_constraintTop_toTopOf="@id/live_game_name"
             app:layout_constraintBottom_toBottomOf="@id/live_from_address"
             app:layout_constraintEnd_toEndOf="parent"
-            app:strokeColor="#B3B3B3"
+            app:strokeColor="@color/placeholder_color"
             app:strokeWidth="2dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/recently_lives_profile_photo"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:src="#B3B3B3"
+                android:src="@color/placeholder_color"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="8dp"
                 app:civ_border_overlay="true"

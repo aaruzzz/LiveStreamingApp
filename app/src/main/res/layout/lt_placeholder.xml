@@ -30,7 +30,7 @@
                 android:layout_width="340dp"
                 android:layout_height="220dp"
                 android:contentDescription="Live Tournament Image"
-                android:background="#B3B3B3"
+                android:background="@color/placeholder_color"
                 android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -50,8 +50,8 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="Capitulo 2 Fortnite"
-                android:background="#B3B3B3"
-                android:textColor="#B3B3B3"
+                android:background="@color/placeholder_color"
+                android:textColor="@color/placeholder_color"
                 android:textSize="22sp"
                 android:textStyle="bold"/>
 
@@ -71,8 +71,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Weekly Tournaments"
-                android:background="#B3B3B3"
-                android:textColor="#B3B3B3"
+                android:background="@color/placeholder_color"
+                android:textColor="@color/placeholder_color"
                 android:textSize="15sp"
                 />
 

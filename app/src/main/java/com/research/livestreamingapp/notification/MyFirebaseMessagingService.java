@@ -16,7 +16,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         notificationFlag++;
 
-        // send a broadcast with the notification flag value
+        //Send a broadcast with notification flag value
         Intent intent = new Intent(NotificationBroadcastReceiver.ACTION_NOTIFICATION_RECEIVED);
         intent.putExtra(NotificationBroadcastReceiver.EXTRA_NOTIFICATION_FLAG, notificationFlag);
         sendBroadcast(intent);
